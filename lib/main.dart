@@ -1,3 +1,4 @@
+import 'package:app_provider/providers/cart_summary_provider.dart';
 import 'package:app_provider/screens/wear_summary_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:is_wear/is_wear.dart';
@@ -17,6 +18,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => ProductProvider()),
         ChangeNotifierProvider(create: (_) => CartProvider()),
+        ChangeNotifierProvider(create: (_) => CartSummaryProvider()),
       ],
       child: const MyApp(),
     ),
