@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:app_provider/helpers/notification_service.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:watch_connectivity/watch_connectivity.dart';
@@ -21,6 +22,7 @@ class CartProvider with ChangeNotifier {
     saveCartItems();
     notifyListeners();
     sendCartSummaryToWatch(_items.length, totalPrice);
+    showNotifications(product.title);
   }
 
   void removeFromCart(Product product) {

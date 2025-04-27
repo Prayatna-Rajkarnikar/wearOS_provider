@@ -74,7 +74,14 @@ class _ProductListScreenState extends State<ProductListScreen> {
             return Card(
               margin: const EdgeInsets.all(8),
               child: ListTile(
-                leading: Image.network(product.thumbnail, width: 60, fit: BoxFit.cover),
+                leading: SizedBox(
+                    height: 60,
+                    width: 60,
+                    child: Image.network(
+                        product.thumbnail,
+                        fit: BoxFit.cover,
+                    )
+                ),
                 title: Text(product.title),
                 subtitle: Text("Rs ${product.price}"),
                 trailing: ElevatedButton(
